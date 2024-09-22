@@ -1,0 +1,21 @@
+# Ignore video files and target video directory
+target_videos/
+non_target_videos/
+target_videos_features/
+hmdb51_org/
+hmdb51_org_stips/
+*.avi
+*.mp4
+
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+
+.DS_Store
+
+
+hmdb51_org.rar
+hmdb51_org_stips.rar
+
+
+
