@@ -7,6 +7,8 @@ hmdb51_org_stips/
 *.avi
 *.mp4
 
+task2_latest.py
+
 # Ignore Python compiled files
 __pycache__/
 *.py[cod]
