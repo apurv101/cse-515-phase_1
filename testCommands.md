@@ -1,6 +1,6 @@
 # Download the dataset and prepare python venv
 ```bash
-sudo apt update ; sudo apt install -y ffmpeg python3 python3-pip
+sudo apt update ; sudo apt install -y ffmpeg python3 python3-pip unrar
 python3 -m venv .venv
 ./downloadDataset.sh
 ./.venv/bin/pip3 install -r requirements.txt
