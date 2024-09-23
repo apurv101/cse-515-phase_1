@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 import math
 
-def colorHistogram(video, r, size):
+def colorHistogram(video, r, size, outputFileName):
     videoFrames = cv2.VideoCapture(video)
     numFrames = int(videoFrames.get(cv2.CAP_PROP_FRAME_COUNT))
     framesList = []
@@ -62,13 +62,28 @@ def colorHistogram(video, r, size):
             print(">\n")
         cv2.imshow("Frame", framesList[i])
         cv2.waitKey(0)
-
-def main():
-    video = ['Bodenturnen_2004_cartwheel_f_cm_np1_le_med_0.avi',
-             'Blade_Of_Fury_-_Scene_1_sword_exercise_f_cm_np1_ri_med_3.avi',
-             'AHF_longsword_against_Rapier_and_Dagger_Fight_sword_f_cm_np2_ri_bad_0.avi',
-             'CastAway2_drink_u_cm_np1_le_goo_8.avi']
-    colorHistogram(video[1], 4, 12)
+        
+    # Write to output file
+    with open(outputFileName, "w") as myfile:
+        for i in range(len(framesList)):
+            for j in range(len(rgbList)):
+                list1 = rgbList[j]
+                list2 = histogramList[j]
+                myfile.write(f"<{i + 1}; {j + 1}; ")
+                for k in range(size):
+                    myfile.write(f"{list1[k]}, {list2[k]} ")
+                myfile.write(">\n")
+    
 
 if __name__ == '__main__':
-    main()
+    import argparse
+
+    # Argument parser to handle input arguments
+    parser = argparse.ArgumentParser(description="Task 3: Creates color histograms for a video.")
+    parser.add_argument('--video', type=str, help='Path to the target video.') 
+    parser.add_argument('--output_file', type=str, default='histogram_features.txt', help='Path to save or load the video features (default: histogram_features.txt).')
+    parser.add_argument('--resolution', type=int, default=4, help='Resolution of histogram.')
+    parser.add_argument('--size', type=int, default=12, help='Color histogram size.')
+    
+    args = parser.parse_args()
+    colorHistogram(args.video, args.size, args.resolution, args.output_file)
