@@ -3,6 +3,7 @@
 sudo apt update ; sudo apt install -y ffmpeg python3 python3-pip
 python3 -m venv .venv
 ./downloadDataset.sh
+./.venv/bin/pip3 install -r requirements.txt
 ```
 
 # Task 1
