@@ -243,7 +243,7 @@ if __name__ == "__main__":
     # Set up command-line argument parsing
     parser = argparse.ArgumentParser(description="Run Task 2 (2a, 2b, 2c) based on user input.")
     parser.add_argument('--task', type=str, required=True, help='Specify the task: 2a, 2b, or 2c.')
-    parser.add_argument('--folder', type=str, help='Path to the folder (for Task 2a).')
+    parser.add_argument('--folder', type=str, help='Path to the STIPS folder (for Task 2a).')
     parser.add_argument('--video', type=str, help='Path to the video file (for 2b and 2c).')
     parser.add_argument('--stip', type=str, help='Path to the STIP file (for 2b and 2c).')
 
