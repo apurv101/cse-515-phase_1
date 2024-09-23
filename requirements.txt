@@ -2,7 +2,7 @@ av
 opencv-python
 numpy
 tensor
-tensorvision
+torchvision
 matplotlib
 scikit-learn
 torch
