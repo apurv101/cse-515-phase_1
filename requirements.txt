@@ -5,3 +5,4 @@ tensor
 tensorvision
 matplotlib
 scikit-learn
+torch
