@@ -6,6 +6,7 @@ hmdb51_org/
 hmdb51_org_stips/
 *.avi
 *.mp4
+cluster_centers/*
 
 task2_latest.py
 
