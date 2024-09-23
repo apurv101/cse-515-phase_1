@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 rm -rf hmdb51_org/ hmdb51_org_stips/ on_target_videos/ target_videos/ cluster_centers/
 wget -c http://serre-lab.clps.brown.edu/wp-content/uploads/2013/10/hmdb51_org.rar
